@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Cafe24Simplehae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: "Cafe24Simplehae", sans-serif;
+    font-size:1.1rem;
+    color:#333;
+    line-height:1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border:0;
+    background:none;
+    font-size:inherit;
+    font-family: inherit;
+    vertical-align: middle;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}

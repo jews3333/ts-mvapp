@@ -1,0 +1,11 @@
+.movie-list {
+    display: flex;
+    flex-flow: row wrap;
+
+    & > .movie-item {
+        border-radius: 1em;
+        overflow:hidden;
+        width:150px;
+        height:200px;
+    }
+}
