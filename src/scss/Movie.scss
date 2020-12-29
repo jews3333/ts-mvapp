@@ -1,11 +1,54 @@
 .movie-list {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
 
     & > .movie-item {
-        border-radius: 1em;
-        overflow:hidden;
-        width:150px;
-        height:200px;
+        padding:0.25em;
+
+        & > a {
+            display:block;
+            position:relative;
+            border-radius: 1em;
+            overflow:hidden;
+            width:150px;
+            height:200px;
+
+            & > .info {
+                position:absolute;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                padding:1em;
+                color:#fff;
+                background:rgba(0,0,0,0.6);
+                word-break: keep-all;
+                opacity:0;
+                transition: all 0.5s ease;
+
+                &:hover,
+                &:focus {
+                    opacity: 1;
+                }
+    
+                & > .tit {
+                    font-size:0.9em;
+                    font-weight:bold;
+                    margin-bottom:0.25em;
+                }
+    
+                & > .eng {
+                    font-size:0.7em;
+                }
+    
+                & > .date {
+                    position:absolute;
+                    bottom: 1em;
+                    right:1em;
+                    font-size: 0.7em;
+                }
+            }
+        }
     }
 }

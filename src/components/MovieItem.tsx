@@ -22,13 +22,13 @@ function MovieItem(props:any){
     return (
         <div className='movie-item'>
             <a href="">
-                <div className="movie-item-thumb">
+                <div className="thumb">
                     <img src={posters.split("|")[0]} alt=""/>
                 </div>
-                <div className="movie-item-info">
-                    <p><span>{type}</span>{title}</p>
-                    <p>{titleEng}</p>
-                    <p>{repRlsDate}</p>
+                <div className="info">
+                    <p className="tit"><span>{type}</span>{title}</p>
+                    <p className="eng">{titleEng}</p>
+                    <p className="date">{repRlsDate}</p>
                 </div>
             </a>
         </div>
