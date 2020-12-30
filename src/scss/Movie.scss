@@ -1,36 +1,55 @@
 .movie-list {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    // display: flex;
+    // flex-flow: row wrap;
 
-    & > .movie-item {
+    .slick-list {
+        overflow:visible;
+    }
+
+    .movie-item {
         padding:0.25em;
+        //width:calc(100% / 6);
+        height:250px;
 
         & > a {
             display:block;
             position:relative;
             border-radius: 1em;
             overflow:hidden;
-            width:150px;
-            height:200px;
+            height:100%;
+
+            & > .thumb {
+                text-align:center;
+                background:#aaa;
+                height:100%;
+
+                & > img {
+                    width:100%;
+                }
+
+                & > span {
+                    position:absolute;
+                    top:50%;
+                    left:50%;
+                    transform: translate(-50%,-50%);
+                    font-weight:bold;
+                    color:#777;
+                }
+            }
 
             & > .info {
                 position:absolute;
-                top:0;
+                top:50%;
                 left:0;
                 right:0;
-                bottom:0;
-                padding:1em;
+                height:0;
                 color:#fff;
+                padding:0 1em;
                 background:rgba(0,0,0,0.6);
+                opacity: 0;
                 word-break: keep-all;
-                opacity:0;
+                overflow:hidden;
                 transition: all 0.5s ease;
-
-                &:hover,
-                &:focus {
-                    opacity: 1;
-                }
     
                 & > .tit {
                     font-size:0.9em;
@@ -49,6 +68,32 @@
                     font-size: 0.7em;
                 }
             }
+
+            &:hover,
+            &:focus {
+                & > .info {
+                    top:0;
+                    height:100%;
+                    padding:1em;
+                    opacity: 1;
+                }
+            }
         }
+    }
+}
+
+.movie-view {
+    .slick-list {
+        overflow:visible;
+        margin: 0 -0.25em;
+    }
+
+    .slick-slide {
+        padding:0 0.25em;
+    }
+
+    .still {
+        border-radius:0.5em;
+        overflow:hidden;
     }
 }

@@ -3,7 +3,10 @@ import * as actions from "./actions";
 
 export type MovieAction = ActionType<typeof actions>;
 
-export type MovieState = Array<any> | null;
+export type MovieState = {
+    list : Array<any> | null;
+    view : Array<any> | null;
+}
 
 // export type MovieItem = {
 //     audiAcc: string,

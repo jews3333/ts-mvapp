@@ -23,7 +23,7 @@ function MovieItem(props:any){
         <div className='movie-item'>
             <a href="">
                 <div className="thumb">
-                    <img src={posters.split("|")[0]} alt=""/>
+                    {posters ? <img src={posters.split("|")[0]} alt=""/> : <span>No Poster</span>}
                 </div>
                 <div className="info">
                     <p className="tit"><span>{type}</span>{title}</p>

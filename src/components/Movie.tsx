@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react';
+
+import SlickSlider from 'react-slick';
+
 import useMovie from '../hooks/useMovie';
 
 import MovieItem from './MovieItem';
@@ -13,6 +16,13 @@ function Movie(){
 
     const { list, onGetMovie } = useMovie();
 
+    const settings = {
+        centerMode: false,
+        arrows: false,
+        slidesToShow: 6,
+        infinite: false
+    }
+
     useEffect(() => {
         console.log(list)
         if(!list){
@@ -22,11 +32,11 @@ function Movie(){
 
     return (
         <div className='content'>
-            <ul className="movie-list">
+            <SlickSlider className="movie-list" {...settings}>
             {list ? list.map((item:MovieData, index) => {
                 return <MovieItem key={index} data={item}/>
             }) : null}
-            </ul>
+            </SlickSlider>
         </div>    
     )
 }

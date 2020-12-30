@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import { getMovie } from '../modules/movie';
 
 function useMovie(){
-    const list = useSelector((state:RootState) => state.movie);
+    const list = useSelector((state:RootState) => state.movie.list);
     const dispatch = useDispatch();
     
     const onGetMovie = useCallback(() => {
