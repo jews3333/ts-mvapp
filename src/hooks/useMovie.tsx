@@ -11,7 +11,25 @@ function useMovie(){
 
         let list = new Array();
 
-        fetch(`${process.env.REACT_APP_MOVIE_API_URL}&ServiceKey=${process.env.REACT_APP_MOVIE_API_KEY}&listCount=10&releaseDts=20190101&detail=Y`)
+        const date = new Date();
+        const year = date.getFullYear().toString();
+        const month = () => {
+            if(date.getMonth()+1 < 10){
+                return "0"+(date.getMonth()+1).toString();
+            } else {
+                return (date.getMonth()+1).toString();
+            }
+        }
+        const day = () => {
+            if(date.getDate() < 10){
+                return "0"+date.getDate().toString();
+            } else {
+                return date.getDate().toString();
+            }
+        }
+        const fullDateFormat = year+month()+day();
+
+        fetch(`${process.env.REACT_APP_MOVIE_API_URL}&ServiceKey=${process.env.REACT_APP_MOVIE_API_KEY}&releaseDte=${fullDateFormat}&listCount=10&detail=Y&sort=repRlsDate,1`)
         .then(data => data.json())
         .then(json => {
             console.log(json)

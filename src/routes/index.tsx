@@ -1,2 +1,2 @@
-export { default as Movie } from '../components/Movie';
-export { default as View } from '../components/View';
+export { default as Movie } from '../components/movie/Movie';
+export { default as View } from '../components/movie/View';

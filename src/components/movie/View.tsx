@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 
 import SlickSlider from 'react-slick';
 
-import useView from '../hooks/useView';
+import useView from '../../hooks/useView';
+
+let status:Boolean = false;
 
 function View(props:any){
 
@@ -11,9 +13,8 @@ function View(props:any){
     const { view, onGetView } = useView();
 
     useEffect(() => {
-        console.log(props);
-        console.log(view)
-        if(!view){
+        if(!status){
+            status = true;
             onGetView(id, seq);
         }
     });
@@ -26,7 +27,7 @@ function View(props:any){
     }
 
     return (
-        <div className="content">
+        <div id="content">
             {view ? 
             <div className="movie-view">
                 <div className="movie-info">

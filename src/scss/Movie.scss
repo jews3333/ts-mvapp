@@ -19,12 +19,19 @@
             height:100%;
 
             & > .thumb {
+                position: relative;
                 text-align:center;
                 background:#aaa;
                 height:100%;
 
                 & > img {
-                    width:100%;
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    transform: translate(-50%,-50%);
+                    min-width:100%;
+                    min-height:100%;
+                    max-width:none;
                 }
 
                 & > span {

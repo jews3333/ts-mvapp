@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function MovieItem(props:any){
 
     const {
         actors,
         company,
+        DOCID,
         movieSeq,
         movieId,
         plot,
@@ -21,7 +23,7 @@ function MovieItem(props:any){
 
     return (
         <div className='movie-item'>
-            <a href="">
+            <Link to={`/${DOCID}`}>
                 <div className="thumb">
                     {posters ? <img src={posters.split("|")[0]} alt=""/> : <span>No Poster</span>}
                 </div>
@@ -30,7 +32,7 @@ function MovieItem(props:any){
                     <p className="eng">{titleEng}</p>
                     <p className="date">{repRlsDate}</p>
                 </div>
-            </a>
+            </Link>
         </div>
     )
 }
