@@ -11,6 +11,7 @@ function MovieItem(props:any){
         movieId,
         plot,
         posters,
+        rating,
         repRlsDate,
         runtime,
         staffs,
@@ -23,7 +24,7 @@ function MovieItem(props:any){
 
     return (
         <div className='movie-item'>
-            <Link to={`/${DOCID}`}>
+            <Link to={`/${movieId}/${movieSeq}`}>
                 <div className="thumb">
                     {posters ? <img src={posters.split("|")[0]} alt=""/> : <span>No Poster</span>}
                 </div>

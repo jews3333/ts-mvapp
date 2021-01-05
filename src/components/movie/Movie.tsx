@@ -19,10 +19,25 @@ function Movie(){
     const { list, onGetMovie } = useMovie();
 
     const settings = {
-        centerMode: false,
+        // centerMode: true,
         arrows: false,
         slidesToShow: 6,
-        infinite: false
+        slidesToScroll: 1,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
     }
 
     useEffect(() => {
@@ -33,13 +48,16 @@ function Movie(){
     });
 
     return (
-        <div id='content'>
-            <SlickSlider className="movie-list" {...settings}>
-            {list ? list.map((item:MovieData, index) => {
-                return <MovieItem key={index} data={item}/>
-            }) : null}
-            </SlickSlider>
-        </div>    
+        <div className="new-movie-content">
+            <h4 className="tit">New Movie</h4>
+            <div className="content-inner">
+                <SlickSlider className="movie-list" {...settings}>
+                {list ? list.map((item:MovieData, index) => {
+                    return <MovieItem key={index} data={item}/>
+                }) : null}
+                </SlickSlider>
+            </div>
+        </div>
     )
 }
 

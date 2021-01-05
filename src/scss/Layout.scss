@@ -13,9 +13,59 @@
 
     .header-logo {
         position: absolute;
-        left:0;
+        left:50%;
         top:50%;
+        transform: translate(-50%,-50%);
+        font-size:1.4em;
+
+        &:before {
+            content:"";
+            display:block;
+            width:0.25em;
+            height:0.25em;
+            border-radius: 50%;
+            background:#333;
+            position:absolute;
+            left:calc(1em / 2 - 0.19em);
+            bottom: 1.125em;
+        }
+    }
+
+    .header-back-btn {
+        position: absolute;
+        top:50%;
+        left: 0;
         transform: translateY(-50%);
+        width:3em;
+        height: 3em;
+        text-indent: -9999px;
+        overflow: hidden;
+
+        & > span {
+            left:-9999px;
+        }
+
+        &::before,
+        &::after {
+            content:"";
+            display: block;
+            position: absolute;
+            top:50%;
+            left:50%;
+            width:35%;
+            height:1px;
+            background: #777;
+        }
+
+        &::before {
+            transform: translate(-50%,-50%) rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        &::after {
+            transform: translate(-50%,-50%) rotate(45deg);
+            transform-origin: 0 0;
+        }
     }
 
     .header-nav-btn {
@@ -60,7 +110,15 @@
 }
 
 #content {
-    max-width:1200px;
-    margin: 0 auto;
-    padding-top:3em;
+    padding:3em 0;
+    overflow: hidden;
+}
+
+#footer {
+    position:fixed;
+    bottom:0;
+    right:0;
+    padding:0.5em;
+    font-size:0.7em;
+    color:#777;
 }
